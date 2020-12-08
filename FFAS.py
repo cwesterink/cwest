@@ -9,7 +9,7 @@ def index():
 
 @app.route('/test', methods = ['POST','GET'])
 def test():
-	return 'hello world helloe djvhcveic'
+	return render_template('test.html')
 
 if __name__ == '__main__':
 	app.run(debug=True)
