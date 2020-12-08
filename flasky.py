@@ -22,7 +22,7 @@ class users(db.Model):
 
 @app.route('/')
 def home():
-    re
+    
     if len(session) == 0:
         flash("Welcome please sign in")
     return render_template("index.html")
