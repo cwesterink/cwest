@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends "base.html"%}
+{% block title %}User{% endblock %}
+{% block content %}
+<h2><center>user</center></h2>
+<center>
+    {% with messages = get_flashed_messages() %}
+    {% for msg in messages %}
+        <p>{{msg}}<p>
+    {% endfor %}
+{% endwith %}
+</center>
+{%if form == True%}:
+<p1>Hello {{user}} please enter additinal info below</p1>
+<form action ="/user", method = "post">
+    <p>Enter Age</p>
+    <p><input type="text" name = "age"></p>
+    <p>Enter favourite Color</p>
+    <p><input type="text" name = "color"></p>
+    <p>Enter City of residence</p>
+    <p><input type="text" name = "location"></p>
+    <p><input type="submit" value = "submit"></p>
+</form>
+{% endif%}
+{% if form == False%}
+<h2>Hello {{user}}: <br>
+    age: {{age}}<br>
+    city: {{location}}<br>
+    favourite color: {{color}}<br></h2>
+    <br><br>
+
+    <form action ="/edit", method = "get">
+    <p><input type="submit" value = "Edit Info"></p>
+    </form>
+
+    <form action ="/logout", method = "post">
+    <p><input type="submit" value = "logout"></p>
+    </form>
+
+    <form action ="/delete", method = "get">
+    <p><input type="submit" value = "Delete Account"></p>
+    </form>
+{% endif %}
+
+{% endblock %}

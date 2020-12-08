@@ -1,1 +1,1 @@
-web: gunicorn FFAS:app
+web: gunicorn flasky:app

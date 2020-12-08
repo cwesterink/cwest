@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "base.html"%}
+{% block title %}Admin{% endblock %}
+{% block content %}
+<h2><center>Admin</center></h2>
+{% with messages = get_flashed_messages() %}
+    {% for msg in messages %}
+        <p>{{msg}}</p>
+    {% endfor %}
+{% endwith %}
+
+<center><table border="">
+    <tr><td>Name</td><td>Age</td><td>Color</td><td>Location</td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+{% for user in accounts %}
+    <tr>
+        <td>{{user.name}}</td><td>{{user.age}}</td><td>{{user.color}}</td><td>{{user.location}}</td>
+
+    </tr>
+{% endfor %}
+</table></center>
+{% endblock %}
